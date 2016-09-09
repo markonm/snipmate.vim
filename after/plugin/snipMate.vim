@@ -37,4 +37,15 @@ endif
 call GetSnippets(snippets_dir, '_') " Get global snippets
 
 au FileType * if &ft != 'help' | call GetSnippets(snippets_dir, &ft) | endif
+
+" create command for SnipEdit
+fun! SnippetsEdit()
+  if &ft == ''
+    exe "e " . g:snippets_dir . "_.snippets"
+  else
+    exe "e " . g:snippets_dir . &ft . ".snippets"
+  endif
+endf
+command! SnipEdit :call SnippetsEdit()
+
 " vim:noet:sw=4:ts=4:ft=vim
