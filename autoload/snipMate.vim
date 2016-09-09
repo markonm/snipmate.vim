@@ -11,7 +11,9 @@ fun s:RemoveSnippet()
 		unl s:startCol s:origWordLen s:update
 		if exists('s:oldVars') | unl s:oldVars s:oldEndCol | endif
 	endif
-	aug! snipMateAutocmds
+	aug snipMateAutocmds
+		au!
+	aug END
 endf
 
 fun snipMate#expandSnip(snip, col)
