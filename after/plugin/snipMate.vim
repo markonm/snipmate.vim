@@ -17,11 +17,8 @@ let s:did_snips_mappings = 1
 " ino <silent> <c-r><tab> <c-r>=ShowAvailableSnips()<cr>
 
 
-ino <silent> <c-j> <c-r>=TriggerSnippet()<cr>
-
-
-
-
+ino <silent> <Plug>snipmateForward <c-r>=TriggerSnippet()<cr>
+ino <silent> <Plug>snipmateBackward <c-r>=BackwardsSnippet()<cr>
 
 
 " The default mappings for these are annoying & sometimes break snipMate.
