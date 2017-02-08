@@ -182,8 +182,7 @@ fun! TriggerSnippet()
 		call feedkeys(SuperTabKey)
 		return ''
 	endif
-	" disable tab
-	return ''
+	return "\<tab>"
 endf
 
 fun! BackwardsSnippet()
@@ -200,8 +199,7 @@ fun! BackwardsSnippet()
 		call feedkeys(SuperTabKey)
 		return ''
 	endif
-	" disable tab
-	return ''
+	return "\<s-tab>"
 endf
 
 " Check if word under cursor is snippet trigger; if it isn't, try checking if
