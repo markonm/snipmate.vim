@@ -41,13 +41,13 @@ call GetSnippets(snippets_dir, '_') " Get global snippets
 au FileType * if &ft != 'help' | call GetSnippets(snippets_dir, &ft) | endif
 
 " create command for SnipEdit
-fun! SnippetsEdit()
+fun! SnippetsEdit(mods)
   if &ft == ''
-    exe "e " . g:snippets_dir . "_.snippets"
+    exe a:mods . " split " . g:snippets_dir . "_.snippets"
   else
-    exe "e " . g:snippets_dir . &ft . ".snippets"
+    exe a:mods . " split " . g:snippets_dir . &ft . ".snippets"
   endif
 endf
-command! SnipEdit :call SnippetsEdit()
+command! SnipEdit :call SnippetsEdit(<q-mods>)
 
 " vim:noet:sw=4:ts=4:ft=vim
