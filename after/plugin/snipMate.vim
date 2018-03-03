@@ -10,14 +10,14 @@ let s:did_snips_mappings = 1
 "
 " You can safely adjust these mappings to your preferences (as explained in
 " :help snipMate-remap).
-" ino <silent> <tab> <c-r>=TriggerSnippet()<cr>
-" snor <silent> <tab> <esc>i<right><c-r>=TriggerSnippet()<cr>
-" ino <silent> <s-tab> <c-r>=BackwardsSnippet()<cr>
-" snor <silent> <s-tab> <esc>i<right><c-r>=BackwardsSnippet()<cr>
-" ino <silent> <c-r><tab> <c-r>=ShowAvailableSnips()<cr>
-
-inoremap <silent> <expr> <Plug>Snipmate pumvisible() ? "\<c-y>\<c-e>\<c-r>=TriggerSnippet()\<cr>" : "<c-r>=TriggerSnippet()\<cr>"
-snoremap <silent> <c-b> <esc>i<right><c-r>=TriggerSnippet()<cr>
+" Trigger snipmate
+inoremap <silent> <expr> <Plug>SnipmateTrigger pumvisible() ? "\<c-y>\<c-e>\<c-r>=TriggerSnippet()\<cr>" : "<c-r>=TriggerSnippet()\<cr>"
+snoremap <silent> <Plug>SnipmateTrigger <esc>i<right><c-r>=TriggerSnippet()<cr>
+" go backwards
+inoremap <silent> <Plug>SnipmateBackwards <c-r>=BackwardsSnippet()<cr>
+snoremap <silent> <Plug>SnipmateBackwards <esc>i<right><c-r>=BackwardsSnippet()<cr>
+" show all snippets
+inoremap <silent> <Plug>SnipmateMenu <c-r>=ShowAvailableSnips()<cr>
 
 " The default mappings for these are annoying & sometimes break snipMate.
 " You can change them back if you want, I've put them here for convenience.
