@@ -53,7 +53,7 @@ fun snipMate#expandSnip(snip, col)
 
 	if s:snipLen
 		aug snipMateAutocmds
-			au CursorMovedI * call s:UpdateChangedSnip(0)
+			au CursorMovedI,CompleteDone * call s:UpdateChangedSnip(0)
 			au InsertEnter * call s:UpdateChangedSnip(1)
 		aug END
 		let s:lastBuf = bufnr(0) " Only expand snippet while in current buffer
