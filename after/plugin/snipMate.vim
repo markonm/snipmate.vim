@@ -11,7 +11,7 @@ let s:did_snips_mappings = 1
 " You can safely adjust these mappings to your preferences (as explained in
 " :help snipMate-remap).
 " Trigger snipmate
-inoremap <silent> <expr> <Plug>SnipmateTrigger pumvisible() ? "\<c-y>\<c-e>\<c-r>=TriggerSnippet()\<cr>" : "<c-r>=TriggerSnippet()\<cr>"
+inoremap <silent> <expr> <Plug>SnipmateTrigger pumvisible() ? "<c-y><c-r>=TriggerSnippet()<cr>" : "<c-r>=TriggerSnippet()<cr>"
 snoremap <silent> <Plug>SnipmateTrigger <esc>i<right><c-r>=TriggerSnippet()<cr>
 " go backwards
 inoremap <silent> <Plug>SnipmateBackwards <c-r>=BackwardsSnippet()<cr>
